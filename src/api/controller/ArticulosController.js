@@ -5,3 +5,9 @@ export const createArticulo = async (formData) =>{
         return response;
     });
 }
+
+export const getArticulo = async (value) =>{
+    return await articulosActions.get(value).then((response) => {
+        return response;
+    });
+}
