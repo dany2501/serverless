@@ -45,8 +45,6 @@ const apiClient = (endpoint) => {
     return {
         get,
         post,
-        put,
-        patch,
         del
     };
 };
