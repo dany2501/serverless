@@ -1,7 +1,6 @@
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getArticulo } from "../api/controller/ArticulosController";
 import CarritoList from "../Components/ItemList/CarritoList";
 import { agregarCarrito, getCarrito, eliminarCarrito, eliminarProductoCarrito } from "../api/controller/CarritoController";
 import Alert from "../Components/Alert/Alert";

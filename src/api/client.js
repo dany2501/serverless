@@ -12,7 +12,7 @@ const apiClient = (endpoint) => {
             method: method,
         };
 
-        if (body != undefined) {
+        if (body !== undefined) {
             options.body = JSON.stringify(body);
         }
 
@@ -34,27 +34,6 @@ const apiClient = (endpoint) => {
     const post = async (body = undefined, token = undefined) => {
         if (!body) throw new Error("to make a post you must provide a body");
         return await customFetch(endpoint, "POST", body, token);
-    };
-
-    const put = async (id = false, body = undefined, token = undefined) => {
-        if (!id || !body)
-            throw new Error("to make a put you must provide the id and the body");
-        const url = `${endpoint}/${id}/`;
-        return await customFetch(url, "PUT", body, token);
-    };
-    
-    const patch = async (id = undefined, body = undefined, token = undefined) => {
-        console.log("patch", id, body, token);
-        if (!body)
-            throw new Error("to make a patch you must provide the body");
-        let url = ""
-        if (id == undefined){
-            url = `${endpoint}`;
-        }
-        else{
-            url = `${endpoint}/${id}/`;
-        }
-        return  customFetch(url, "PATCH", body, token);
     };
 
     const del = async (id = false, token = undefined) => {
