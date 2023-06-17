@@ -7,7 +7,6 @@ import Alert from "../Components/Alert/Alert";
 import ModalDelete from "../Components/Modal/ModalDelete";
 function Carrito() {
   const history = useNavigate();
-  const [value, setValue] = useState("");
   const [products, setProducts] = useState([]);
 
   const [error, setError] = useState(null);
@@ -19,7 +18,7 @@ function Carrito() {
 
   useEffect(() => {
     handleProducts();
-  }, []);
+  });
 
   const handlerAgregarCarrito = async (item, quantity) => {
     let body = {
@@ -41,7 +40,7 @@ function Carrito() {
   };
 
   const handleProducts = async () => {
-    await getCarrito(value).then(async (response) => {
+    await getCarrito().then(async (response) => {
       if (response.status === 200) {
         let res = await response.json();
         console.log(res.data);

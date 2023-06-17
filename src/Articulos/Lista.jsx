@@ -16,7 +16,7 @@ function Lista() {
 
   useEffect(() => {
     handleProducts();
-  }, []);
+  });
 
   const handlerAgregarCarrito = async (item, quantity) => {
     console.log("handlerAgregarCarrito", item);
